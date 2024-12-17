@@ -58,14 +58,14 @@ while (recorder.IsRecording)
 
 NanoWakeWord comes with 5 embedded wake-word models as part of the openWakeWord port: alexa, hey_anna, hey_jarvis, hey_marvin, hey_mycroft.
 
-By following the openWakeWord project [instructions](https://github.com/dscripka/openWakeWord#training-new-models), you can train custom models and use them with the library
-as you normally would with openWakeWord.
+By following the openWakeWord project [instructions](https://github.com/dscripka/openWakeWord#training-new-models), you can train custom models and use them in NanoWakeWord
+as you would normally do in openWakeWord.
 
-### Using Podman and Python scripts
+### Training Models Locally Using Podman and Python scripts
 
 To facilitate the training process, the *scripts* folder contains Python scripts for automating model training using a Podman container.
 
-Kick off the Podman Linux container (note - you will need to enable Cuda GPU support on the host and the Podman runtime):
+Kick off the Podman Linux container (note - you will need to enable Cuda GPU support in Podman):
 
 ```
 podman run --gpus=all --shm-size=50G -p 127.0.0.1:9000:8080 us-docker.pkg.dev/colab-images/public/runtime
