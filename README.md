@@ -1,6 +1,6 @@
 # NanoWakeWord
 
-NanoWakeWord is a minimal C# port of the [openWakeWord](https://github.com/dscripka/openWakeWord) project's wake-word engine.
+NanoWakeWord is a minimal C# port of the Python [openWakeWord](https://github.com/dscripka/openWakeWord) wake-word detection engine.
 
 It runs efficiently on any platform supporting .NET Standard 2.0, including the RaspberryPi Zero 2/2W (linux-arm64).
 
@@ -12,14 +12,15 @@ It has only one external library dependency: the Microsoft.ML.OnnxRuntime.
 
 ## Why
 
-I was specifically looking for a simple wake-word library for C# that would run on desktop Windows/Linux and also on 64-bit Raspberry Pi devices.
-Amongst the currently available options, *PocketSphinx* was not performing adequately enough, *SnowBoy* was EOL, 
-without source code and no Windows runtime support. *Picovoice/Porcupine* was performing well but had an annoying licensing and 
-registration model. It tracks down library usage on startup (over the internet) and potentially bans you for life if their platform detects deliberate or accidental misuse.
-I was also unsure about how their licensing engine would behave if the was no internet connectivity for quite some time.
+I was specifically looking for a simple wake-word library for C# that would run on desktop Windows/Linux and also on Raspberry Pi devices.
 
-From the above investigated options, *openWakeWord* was the best choice as it had surprisingly good performance and it was free. 
-Since its Python implementation was clear and simple enough - it was partially ported to C#.
+Amongst the investigated options, *PocketSphinx* was not performing adequately enough, *SnowBoy* was EOL, 
+without source code and no Windows runtime support. *Picovoice/Porcupine* was performing well but had an annoying licensing and 
+registration model. It tracks down library usage (over the internet) and potentially bans you for life if their platform detects any deliberate 
+or accidental misuse. I was also unsure about how their licensing engine would behave if the was no internet connectivity for quite some time.
+
+From the above investigated options, *openWakeWord* was the best choice as it demonstrated surprisingly good performance and it was free. 
+Since its Python implementation was clear and simple enough - it was ported over to C#.
 
 
 ## Usage
