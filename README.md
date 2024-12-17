@@ -23,7 +23,7 @@ From the above investigated options, openWakeWord had exceptionally good perform
 Nonetheless, since its implementation was clear and simple enough - it was partially ported to C#.
 
 
-## Usage:
+## Usage
 
 Build NanoWakeWord and reference the resulting nuget package.
 Alternatively, reference the resulting dll library.
