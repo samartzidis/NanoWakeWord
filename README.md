@@ -5,12 +5,12 @@ NanoWakeWord is a minimal C# port of the [openWakeWord](https://github.com/dscri
 It runs efficiently on any platform supporting .NET Standard 2.0, including the RaspberryPi Zero 2/2W (linux-arm64).
 
 
-# Dependencies
+## Dependencies
 
 It has only one external library dependency: the Microsoft.ML.OnnxRuntime.
 
 
-# Why
+## Why
 
 I was specifically looking for a simple wake-word library for C# that would run on desktop Windows/Linux and also on 64-bit Raspberry Pi devices.
 Amongst the currently available options, PocketSphinx was not performing adequately enough, SnowBoy was EOL, 
