@@ -15,10 +15,10 @@ It has only one external library dependency: the Microsoft.ML.OnnxRuntime.
 I was specifically looking for a simple wake-word library for C# that would run on desktop Windows/Linux and also on 64-bit Raspberry Pi devices.
 Amongst the currently available options, *PocketSphinx* was not performing adequately enough, *SnowBoy* was EOL, 
 without source code and no Windows runtime support. *Picovoice/Porcupine* was performing well but had an annoying licensing and 
-registration model. It tracks down library usage on startup (over the internet) and potentially bans you for life if their platform detects potential misuse.
+registration model. It tracks down library usage on startup (over the internet) and potentially bans you for life if their platform detects deliberate or accidental misuse.
 I was also unsure about how their licensing engine would behave if the was no internet connectivity for quite some time.
 
-From the above investigated options, openWakeWord was the best choice as it had surprisingly good performance and it was free. 
+From the above investigated options, *openWakeWord* was the best choice as it had surprisingly good performance and it was free. 
 Since its Python implementation was clear and simple enough - it was partially ported to C#.
 
 
