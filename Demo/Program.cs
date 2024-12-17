@@ -7,7 +7,10 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        var runtime = new WakeWordRuntime(new WakeWordRuntimeConfig { Debug = false, WakeWords = [ new WakeWordConfig { Model = "alexa_v0.1" } ] });
+        var runtime = new WakeWordRuntime(new WakeWordRuntimeConfig { 
+            Debug = false, 
+            WakeWords = [ new WakeWordConfig { Model = "alexa_v0.1" } ] 
+        });
 
         using var recorder = PvRecorder.Create(frameLength: 512);
         recorder.Start();
