@@ -32,7 +32,9 @@ Alternatively, reference the resulting dll library.
 ## Sample Code
 
 ```csharp
-var runtime = new WakeWordRuntime(new WakeWordRuntimeConfig { Debug = false, WakeWords = [ new WakeWordConfig { Model = "alexa_v0.1" } ] });
+var runtime = new WakeWordRuntime(new WakeWordRuntimeConfig { 
+    Debug = false, WakeWords = [ new WakeWordConfig { Model = "alexa_v0.1" } ] 
+});
 
 using var recorder = PvRecorder.Create(frameLength: 512);
 recorder.Start();
