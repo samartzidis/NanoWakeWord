@@ -13,14 +13,13 @@ It has only one external library dependency: the Microsoft.ML.OnnxRuntime.
 ## Why
 
 I was specifically looking for a simple wake-word library for C# that would run on desktop Windows/Linux and also on 64-bit Raspberry Pi devices.
-Amongst the currently available options, PocketSphinx was not performing adequately enough, SnowBoy was EOL, 
-without source code and no Windows runtime support. Picovoice/Porcupine was performing well but had an annoying licensing and 
-registration model. It tracks down library usage on startup (over the internet) and potentially bans you for life if their platform detects licensing violations,
-which I considered unacceptable. I was also unsure on how their licensing engine would behave if the was no internet connectivity for quite some time. Picovoice was 
-clearly not hobbyist friendly.
+Amongst the currently available options, *PocketSphinx* was not performing adequately enough, *SnowBoy* was EOL, 
+without source code and no Windows runtime support. *Picovoice/Porcupine* was performing well but had an annoying licensing and 
+registration model. It tracks down library usage on startup (over the internet) and potentially bans you for life if their platform detects potential misuse.
+I was also unsure about how their licensing engine would behave if the was no internet connectivity for quite some time.
 
-From the above investigated options, openWakeWord had exceptionally good performance and was free - but Python-based. 
-Nonetheless, since its implementation was clear and simple enough - it was partially ported to C#.
+From the above investigated options, openWakeWord was the best choice as it had surprisingly good performance and it was free. 
+Since its Python implementation was clear and simple enough - it was partially ported to C#.
 
 
 ## Usage
@@ -29,7 +28,7 @@ Build NanoWakeWord and reference the resulting nuget package.
 Alternatively, reference the resulting dll library.
 
 
-## Sample Code
+### Sample Code
 
 ```csharp
 var runtime = new WakeWordRuntime(new WakeWordRuntimeConfig { 
