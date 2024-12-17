@@ -17,7 +17,7 @@ I was specifically looking for a simple wake-word library for C# that would run 
 Amongst the investigated options, *PocketSphinx* was not performing adequately enough, *SnowBoy* was EOL, 
 without source code and no Windows runtime support. *Picovoice/Porcupine* was performing well but had an annoying licensing and 
 registration model. It tracks down library usage (over the internet) and potentially bans you for life if their platform detects any deliberate 
-or accidental misuse. I was also unsure about how their licensing engine would behave if the was no internet connectivity for quite some time.
+or accidental misuse. I was also unsure about how their licensing engine would behave if there was no internet connectivity for quite some time.
 
 From the above investigated options, *openWakeWord* was the best choice as it demonstrated surprisingly good performance and it was free. 
 Since its Python implementation was clear and simple enough - it was ported over to C#.
