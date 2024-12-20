@@ -16,7 +16,6 @@
   <ItemGroup>
     <None Remove="Resources\models\alexa_v0.1.onnx" />
     <None Remove="Resources\models\embedding_model.onnx" />
-    <None Remove="Resources\models\hey_anna.onnx" />
     <None Remove="Resources\models\hey_jarvis_v0.1.onnx" />
     <None Remove="Resources\models\hey_marvin_v0.1.onnx" />
     <None Remove="Resources\models\hey_mycroft_v0.1.onnx" />
@@ -26,7 +25,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\models\alexa_v0.1.onnx" />
     <EmbeddedResource Include="Resources\models\embedding_model.onnx" />
-    <EmbeddedResource Include="Resources\models\hey_anna.onnx" />
     <EmbeddedResource Include="Resources\models\hey_jarvis_v0.1.onnx" />
     <EmbeddedResource Include="Resources\models\hey_marvin_v0.1.onnx" />
     <EmbeddedResource Include="Resources\models\hey_mycroft_v0.1.onnx" />
