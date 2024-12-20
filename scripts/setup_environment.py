@@ -50,7 +50,7 @@ run_command(["pip", "install", "datasets==2.14.6"])
 run_command(["pip", "install", "deep-phonemizer==0.0.19"])
 
 # Create directories and download required models
-models_path = "./openwakeword/openwakeword/resources/models"
+models_path = "./openwakeword/resources/models"
 os.makedirs(models_path, exist_ok=True)
 
 embedding_model_onnx = os.path.join(models_path, "embedding_model.onnx")
