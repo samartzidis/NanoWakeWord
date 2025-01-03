@@ -56,7 +56,7 @@ while (recorder.IsRecording)
 
 ## Training Custom Wake-Word Models
 
-NanoWakeWord comes with 5 embedded wake-word models as part of the openWakeWord port: alexa, hey_jarvis, hey_marvin, hey_mycroft.
+NanoWakeWord comes with embedded wake-word models as part of the openWakeWord port: alexa, hey_jarvis, hey_marvin, hey_mycroft.
 
 By following the openWakeWord project [instructions](https://github.com/dscripka/openWakeWord#training-new-models), you can train custom models and use them in NanoWakeWord
 as you would normally do in openWakeWord.
