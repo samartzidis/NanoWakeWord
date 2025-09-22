@@ -12,15 +12,11 @@ It has only one external library dependency: the Microsoft.ML.OnnxRuntime.
 
 ## Why
 
-I was specifically looking for a simple wake-word library for C# that would run on desktop Windows/Linux and also on Raspberry Pi devices.
+I was specifically looking for a simple wake-word library for C# that could run on desktop Windows/Linux systems as well as on Raspberry Pi devices.
 
-Amongst the investigated options, *PocketSphinx* was not performing adequately enough, *SnowBoy* was EOL, 
-without source code and no Windows runtime support. *Picovoice/Porcupine* was performing well but had an annoying licensing and 
-registration model. It tracks down library usage (over the internet) and potentially bans you for life if their platform detects any deliberate 
-or accidental misuse. I was also unsure about how their licensing engine would behave if there was no internet connectivity for quite some time.
+Among the options I evaluated, PocketSphinx did not perform adequately, SnowBoy was end-of-life (EOL), lacked source code, and had no runtime support for Windows. Picovoice/Porcupine performed well but came with a frustrating licensing and registration model. It requires constant internet connectivity to regularly validate the license, tracks usage, and may permanently ban users for any form of misuse—whether intentional or accidental. This approach felt more like spyware than a legitimate tool.
 
-From the above investigated options, *openWakeWord* was the best choice as it demonstrated surprisingly good performance and it was free. 
-Since its Python implementation was clear and simple enough - it was ported over to C#.
+Of all the options investigated, openWakeWord turned out to be the best choice. It demonstrated surprisingly good performance and was completely free. Its Python implementation was straightforward and clean, making it easy to port to C#.
 
 
 ## Usage
@@ -56,7 +52,7 @@ while (recorder.IsRecording)
 
 ## Training Custom Wake-Word Models
 
-NanoWakeWord comes with 5 embedded wake-word models as part of the openWakeWord port: alexa, hey_jarvis, hey_marvin, hey_mycroft.
+NanoWakeWord comes with embedded wake-word models as part of the openWakeWord port: alexa, hey_jarvis, hey_marvin, hey_mycroft.
 
 By following the openWakeWord project [instructions](https://github.com/dscripka/openWakeWord#training-new-models), you can train custom models and use them in NanoWakeWord
 as you would normally do in openWakeWord.
