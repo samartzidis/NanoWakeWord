@@ -8,8 +8,8 @@ internal class Program
     static void Main(string[] args)
     {
         var runtime = new WakeWordRuntime(new WakeWordRuntimeConfig { 
-            Debug = false, 
-            WakeWords = [ new WakeWordConfig { Model = "alexa_v0.1" } ] 
+            Debug = true, 
+            WakeWords = [ new WakeWordConfig { Model = "hey_marvin_v0.1", Threshold = 0.9f } ] 
         });
 
         using var recorder = PvRecorder.Create(frameLength: 512);
