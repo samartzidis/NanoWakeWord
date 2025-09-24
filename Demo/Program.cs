@@ -1,5 +1,6 @@
 ﻿using NanoWakeWord;
 using Pv;
+using System.Reflection;
 
 namespace Demo;
 
@@ -8,7 +9,12 @@ internal class Program
     static void Main(string[] args)
     {
         var runtime = new WakeWordRuntime(new WakeWordRuntimeConfig { 
-            Debug = true, 
+            DebugAction = (model, probability, detected) => { 
+                if (detected) 
+                    Console.WriteLine($"*** {model} {probability:F5}"); 
+                else 
+                    Console.WriteLine($"{model} {probability:F5}"); 
+            }, 
             WakeWords = [ new WakeWordConfig { Model = "hey_marvin_v0.1", Threshold = 0.9f } ] 
         });
 

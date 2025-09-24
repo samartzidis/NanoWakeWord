@@ -75,9 +75,9 @@ public class WakeWordRuntimeConfig
     public int StepFrames { get; set; } = 4;    
 
     /// <summary>
-    /// Write debug messages to console.
+    /// Optionally receive frame debug data.
     /// </summary>
-    public bool Debug { get; set; } = false;
+    public Action<string, float, bool> DebugAction { get; set; }
 }
 
 public class WakeWordRuntime : IDisposable
@@ -279,12 +279,9 @@ public class WakeWordRuntime : IDisposable
 
                 foreach (var probability in wwOutput)
                 {
-                    string model = _settings.WakeWords[i].Model;
+                    var model = _settings.WakeWords[i].Model;
 
-                    if (_settings.Debug)
-                    {
-                        Console.WriteLine($"{model} {probability:F5}");
-                    }
+                    _settings.DebugAction?.Invoke(model, probability, false);
 
                     // If we are in refractory period, ignore detection attempts
                     if (_refractoryCounts[i] > 0)
@@ -299,8 +296,7 @@ public class WakeWordRuntime : IDisposable
                         if (_activations[i] >= _settings.WakeWords[i].TriggerLevel)
                         {
                             // Trigger detected
-                            if (_settings.Debug)
-                                Console.WriteLine($"*** {model} {probability:F5}");
+                            _settings.DebugAction?.Invoke(model, probability, true);
 
                             detectedIndex = i;
 
