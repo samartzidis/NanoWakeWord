@@ -2,21 +2,12 @@
 
 NanoWakeWord is a minimal C# port of the Python [openWakeWord](https://github.com/dscripka/openWakeWord) wake-word detection engine.
 
-It runs efficiently on any platform supporting .NET Standard 2.0, including the RaspberryPi Zero 2/2W (linux-arm64).
+It runs efficiently on any platform supporting .NET Standard 2.0, including Windows, Linux, RaspberryPi including the Zero 2/2W (linux-arm64).
 
 
 ## Dependencies
 
 It has only one external library dependency: the Microsoft.ML.OnnxRuntime.
-
-
-## Why
-
-I was specifically looking for a simple wake-word library for C# that could run on desktop Windows/Linux systems as well as on Raspberry Pi devices.
-
-Among the options I evaluated, PocketSphinx did not perform adequately, SnowBoy was end-of-life (EOL), lacked source code, and had no runtime support for Windows. Picovoice/Porcupine performed well but came with a frustrating licensing and registration model. It requires constant internet connectivity to regularly validate the license, tracks usage, and may permanently ban users for any form of misuse—whether intentional or accidental. This approach felt more like spyware than a legitimate tool.
-
-Of all the options investigated, openWakeWord turned out to be the best choice. It demonstrated surprisingly good performance and was completely free. Its Python implementation was straightforward and clean, making it easy to port to C#.
 
 
 ## Usage
@@ -28,8 +19,17 @@ Alternatively, reference the resulting dll library.
 ### Sample Code
 
 ```csharp
+using NanoWakeWord;
+using Pv;
+
 var runtime = new WakeWordRuntime(new WakeWordRuntimeConfig { 
-    Debug = false, WakeWords = [ new WakeWordConfig { Model = "alexa_v0.1" } ] 
+    DebugAction = (model, probability, detected) => { 
+        if (detected) 
+            Console.WriteLine($"*** {model} {probability:F5}"); 
+        else 
+            Console.WriteLine($"{model} {probability:F5}"); 
+    }, 
+    WakeWords = [ new WakeWordConfig { Model = "hey_marvin_v0.1", Threshold = 0.9f } ] 
 });
 
 using var recorder = PvRecorder.Create(frameLength: 512);
@@ -47,7 +47,7 @@ while (recorder.IsRecording)
     {
         Console.WriteLine($"Detected wake word at index: #{result}.");
     }
-}  
+}
 ```
 
 ## Training Custom Wake-Word Models

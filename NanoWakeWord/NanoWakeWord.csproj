@@ -7,8 +7,19 @@
     <Nullable>disable</Nullable>
     <Version>1.1.0</Version>
     <LangVersion>latest</LangVersion>
+  
+    <Authors>George Samartzidis</Authors>
+    <Description>Lightweight multiplatform .NET offline wake-word library</Description>
+    <PackageTags>wake;word;wakeword;ai;recognition;voice</PackageTags>
+    <RepositoryUrl>https://github.com/samartzidis/NanoWakeWord</RepositoryUrl>
+    <PackageReadmeFile>../README.md</PackageReadmeFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression> 
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="../README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+  
   <ItemGroup>
     <PackageReference Include="Microsoft.ML.OnnxRuntime" Version="1.20.1" />
   </ItemGroup>
