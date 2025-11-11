@@ -1,22 +1,18 @@
 # NanoWakeWord
 
-NanoWakeWord is a minimal C# port of the Python [openWakeWord](https://github.com/dscripka/openWakeWord) wake-word detection engine.
+[NanoWakeWord](https://github.com/samartzidis/nanowakeword) is a minimal C# port of the Python [openWakeWord](https://github.com/dscripka/openWakeWord) wake-word detection engine.
 
 It runs efficiently on any platform supporting .NET Standard 2.0, including Windows, Linux, RaspberryPi including the Zero 2/2W (linux-arm64).
 
 
 ## Dependencies
 
-It has only one external library dependency: the Microsoft.ML.OnnxRuntime.
-
-
-## Usage
-
-Build NanoWakeWord and reference the resulting nuget package.
-Alternatively, reference the resulting dll library.
+It has only one external library dependency, the Microsoft.ML.OnnxRuntime.
 
 
 ### Sample Code
+
+Note, the sample code uses the `PvRecorder` library for providing the sound recording functionality.
 
 ```csharp
 using NanoWakeWord;
